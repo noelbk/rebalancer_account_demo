@@ -1,0 +1,385 @@
+{
+  "family_name": "Smith", 
+  "total_value": 5000000, 
+  "holdings_as_of": "01/01/2014", 
+  "fixed_income_current": "31%", 
+  "fixed_income_target": "35%", 
+  "percent_legacy_positions": "2%",
+  "account_status": [
+    {
+      "name": "Sam and Mary Taxble", 
+      "total_value": 1, 
+      "securities": 2, 
+      "available_cash": 3, 
+      "excess_cash": 4,
+      "trading": 5
+    }, 
+    {
+      "name": "Sam IRA", 
+      "total_value": 1, 
+      "securities": 2, 
+      "available_cash": 3, 
+      "excess_cash": 4,
+      "trading": 5
+    }, 
+    {
+      "name": "Mary IRA", 
+      "securities": 2, 
+      "available_cash": 3, 
+      "trading": 5, 
+      "total_value": 1, 
+      "excess_cash": 4
+    }, 
+    {
+      "name": "Outside", 
+      "securities": 2, 
+      "available_cash": 3, 
+      "trading": 5, 
+      "total_value": 1, 
+      "excess_cash": 4
+    }
+  ], 
+  "assets": [
+    {
+      "asset_class": "Name1", 
+      "percent_of_total": "nnn.n%", 
+      "current_percent": "nnn.n%", 
+      "target_percent": "nnn.n%",
+      "balance": "High", 
+      "symbols": [
+        {
+          "symbol": "symbol1", 
+          "account": "Sam IRA", 
+          "description": "name1", 
+          "shares": "n,nnn,nnn", 
+          "current_price": "$nn.nn", 
+          "value": "$n,nnn,nnn", 
+          "gain_loss": "--", 
+          "type": "--",
+          "lots": [
+            {
+              "term": "LT", 
+              "buy_date": "mm/dd/yyyy", 
+              "shares": "n,nnn,nnn", 
+              "lot": "lot1", 
+              "gain_loss": "-$n,nnn,nnn", 
+              "cost_basis": "$n,nnn,nnn", 
+              "buy_price": "$nn.nn"
+            }, 
+            {
+              "term": "--", 
+              "buy_date": "missing", 
+              "shares": "n,nnn,nnn", 
+              "lot": "lot2", 
+              "gain_loss": "missing", 
+              "cost_basis": "missing", 
+              "buy_price": "missing"
+            }
+          ]
+        }, 
+        {
+          "symbol": "symbol2", 
+          "shares": "n,nnn,nnn", 
+          "current_price": "$nn.nn", 
+          "value": "$n,nnn,nnn", 
+          "gain_loss": "$n,nnn,nnn", 
+          "type": "Legacy",
+          "account": "Sam and Mary taxable", 
+          "description": "name2", 
+          "lots": [
+            {
+              "term": "LT", 
+              "buy_date": "mm/dd/yyyy", 
+              "shares": "n,nnn,nnn", 
+              "lot": "lot1", 
+              "gain_loss": "-$n,nnn,nnn", 
+              "cost_basis": "$n,nnn,nnn", 
+              "buy_price": "$nn.nn"
+            }, 
+            {
+              "term": "--", 
+              "buy_date": "missing", 
+              "shares": "n,nnn,nnn", 
+              "lot": "lot2", 
+              "gain_loss": "missing", 
+              "cost_basis": "missing", 
+              "buy_price": "missing"
+            }
+          ]
+        },
+        {
+          "symbol": "symbol3", 
+          "account": "Sam IRA", 
+          "description": "name1", 
+          "shares": "n,nnn,nnn", 
+          "current_price": "$nn.nn", 
+          "value": "$n,nnn,nnn", 
+          "gain_loss": "--", 
+          "type": "--",
+          "lots": [
+            {
+              "term": "LT", 
+              "buy_date": "mm/dd/yyyy", 
+              "shares": "n,nnn,nnn", 
+              "lot": "lot1", 
+              "gain_loss": "-$n,nnn,nnn", 
+              "cost_basis": "$n,nnn,nnn", 
+              "buy_price": "$nn.nn"
+            }, 
+            {
+              "term": "--", 
+              "buy_date": "missing", 
+              "shares": "n,nnn,nnn", 
+              "lot": "lot2", 
+              "gain_loss": "missing", 
+              "cost_basis": "missing", 
+              "buy_price": "missing"
+            }
+          ]
+        }, 
+        {
+          "symbol": "symbol4", 
+          "shares": "n,nnn,nnn", 
+          "current_price": "$nn.nn", 
+          "value": "$n,nnn,nnn", 
+          "gain_loss": "$n,nnn,nnn", 
+          "type": "Legacy",
+          "account": "Sam and Mary taxable", 
+          "description": "name2", 
+          "lots": [
+            {
+              "term": "LT", 
+              "buy_date": "mm/dd/yyyy", 
+              "shares": "n,nnn,nnn", 
+              "lot": "lot1", 
+              "gain_loss": "-$n,nnn,nnn", 
+              "cost_basis": "$n,nnn,nnn", 
+              "buy_price": "$nn.nn"
+            }, 
+            {
+              "term": "--", 
+              "buy_date": "missing", 
+              "shares": "n,nnn,nnn", 
+              "lot": "lot2", 
+              "gain_loss": "missing", 
+              "cost_basis": "missing", 
+              "buy_price": "missing"
+            }
+          ]
+        }
+      ], 
+      "taxable": [
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Sam and Mary"
+        }, 
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Sam IRA"
+        }, 
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Mary IRA"
+        }, 
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Outside"
+        }
+      ]
+    },
+    {
+      "asset_class": "Name2", 
+      "percent_of_total": "nnn.n%", 
+      "current_percent": "nnn.n%", 
+      "target_percent": "nnn.n%",
+      "balance": "High",
+      "taxable": [
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Sam and Mary"
+        }, 
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Sam IRA"
+        }, 
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Mary IRA"
+        }, 
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Outside"
+        }
+      ]
+    },
+    {
+      "asset_class": "Name3", 
+      "percent_of_total": "nnn.n%", 
+      "current_percent": "nnn.n%", 
+      "target_percent": "nnn.n%",
+      "balance": "High",
+      "taxable": [
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Sam and Mary"
+        }, 
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Sam IRA"
+        }, 
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Mary IRA"
+        }, 
+        {
+          "taxable": "$n,nnn,nnn", 
+          "account": "Outside"
+        }
+      ]
+    }
+  ], 
+  "settings": {
+    "security_preferences": [
+      {
+        "choice_for_nontaxable_accounts": "xxxxx", 
+        "asset_class": "US", 
+        "tax_efficiency_level": 2, 
+        "choice_for_taxable_accounts": "xxxxx", 
+        "subclass": "MarketTilt1", 
+        "proxy_security": "xxxxx"
+      }, 
+      {
+        "choice_for_nontaxable_accounts": "xxxxx", 
+        "asset_class": "US", 
+        "tax_efficiency_level": 1, 
+        "choice_for_taxable_accounts": "xxxxx", 
+        "subclass": "SmallValue", 
+        "proxy_security": "xxxxx"
+      }, 
+      {
+        "choice_for_nontaxable_accounts": "xxxxx", 
+        "asset_class": "Dev", 
+        "tax_efficiency_level": 4, 
+        "choice_for_taxable_accounts": "xxxxx", 
+        "subclass": "MarketTilt3", 
+        "proxy_security": "xxxxx"
+      }, 
+      {
+        "choice_for_nontaxable_accounts": "xxxxx", 
+        "asset_class": "Emerging", 
+        "tax_efficiency_level": 3, 
+        "choice_for_taxable_accounts": "xxxxx", 
+        "subclass": "MarketTilt3", 
+        "proxy_security": "xxxxx"
+      }
+    ], 
+    "accounts": [
+      {
+        "taxable": true, 
+        "trading": "Allowed", 
+        "account_name": "Sam and Mary Taxable", 
+        "minimum_cash": "$n,nnn,nnn", 
+        "number": "nnnnnnnnn"
+      }, 
+      {
+        "taxable": false, 
+        "trading": "Blocked", 
+        "account_name": "Sam IRA", 
+        "minimum_cash": "$n,nnn,nnn", 
+        "number": "nnnnnnnnn"
+      }, 
+      {
+        "taxable": true, 
+        "trading": "Allowed", 
+        "account_name": "Mary IRA", 
+        "minimum_cash": "$n,nnn,nnn", 
+        "number": "nnnnnnnnn"
+      }
+    ], 
+    "security_exceptions": [
+      {
+        "security": "xxxxx", 
+        "trading": "Blocked", 
+        "account": "xxxx-xxxx", 
+        "minimum_cash": "$n,nnn,nnn", 
+        "redemption_hold_days": "nnn"
+      }
+    ], 
+    "allocations": [
+      {
+        "allocation": "Equity", 
+        "percent": "70%",
+        "classes": [
+          {
+            "name": "US",
+            "percent": "55%", 
+            "subclasses": [
+              {
+                "subclass": "LargeCap",
+                "target": "60%"
+              }, 
+              {
+                "subclass": "SmallValue",
+                "target": "40%"
+              }
+            ] 
+          }, 
+          {
+            "name": "Developed",
+            "percent": "25%"
+          }, 
+          {
+            "name": "Emerging",
+            "percent": "xx%"
+          }, 
+          {
+            "name": "REIT",
+            "percent": "xx%"
+          }
+        ]
+      }, 
+      {
+        "allocation": "Fixed-income", 
+        "percent": "30%",
+        "classes": [
+          {
+            "name": "US market",
+            "percent": "50%"
+          }, 
+          {
+            "name": "Global Intermediate",
+            "percent": "25%"
+          }, 
+          {
+            "name": "CA Muni",
+            "percent": "nn%"
+          }
+        ]
+      }
+    ], 
+    "heterogeneous_funds": [
+      {
+        "symbol": "xxxxx", 
+        "trading": "blocked", 
+        "assets": [
+          {
+            "percent": "nn%", 
+            "asset_class": "name1"
+          }, 
+          {
+            "percent": "nn%", 
+            "asset_class": "name2"
+          }
+        ]
+      }
+    ]
+  }, 
+  "alerts": [
+    {
+      "alert": "Cost basis is missing on some assets"
+    }, 
+    {
+      "alert": "Tax loss harvest potential $nn,nnn"
+    }
+  ]
+}

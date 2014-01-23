@@ -1,0 +1,93 @@
+/*Header Intro Styling*/
+
+.demoIntro {
+	padding: 10px; 
+}
+
+.demoIntro h1 {
+	font-size: 18px;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	border-bottom: 1px solid #D9F0F7;
+}
+
+#tabs{
+	width: 98%;
+	margin: 0 auto;
+}
+
+#account_div, #assets_div, #symbols_div, #lots_div{
+	margin-top: 20px;
+}
+
+#account_div h1, #assets_div h1, #symbols_div h1, #lots_div h1 {
+	font-size: 24px;
+	border: none;
+}
+
+#account_div h2 {
+	font-size: 18px;
+}
+
+/*account info tab*/
+
+#account_div table, #assets_div table, #lots_div table{
+	margin-bottom: 20px;
+	border-bottom: 1px solid #C6C6C6;
+	border-top: 1px solid #C6C6C6;
+}
+
+#account_div table tbody, #assets_div table tbody{
+	text-align: left;
+}
+
+#account_div table th, #assets_div table th, #symbols_table table th, #assets_div table td, #symbols_table td, #lots_div td{
+	padding: 3px 8px;
+}
+
+#account_div table tr:nth-child(odd), #symbols_table tr.odd, #assets_div table tr:nth-child(odd), #lots_div table tr:nth-child(odd){
+	background: #D9F0F7;
+}
+
+#account_div h2{
+	border: none;
+}
+
+/*assets table tab*/
+
+#assets_table thead tr:first-child, #symbols_table thead tr:first-child, #symbols_table thead th, #lots_div thead th{
+	background-color: #0a5163;
+	font-weight: normal;
+	color: #fff;
+	padding: 3px 8px;
+}
+
+#assets_table tr:hover {
+	
+}
+
+#assets_table th {
+	padding-right: 10px;
+}
+
+/*symbols table tab*/
+
+#symbols_table {
+	border-bottom: 1px solid #C6C6C6;
+	border-top: 1px solid #C6C6C6;
+}
+
+#symbols_table thead tr:first-child, #assets_table thead tr:first-child{
+	text-align: left;
+}
+
+#symbols_table thead th.sorting_desc, #symbols_table thead th.sorting_asc, #lots_div thead th.sorting_desc, #lots_div thead th.sorting_asc{
+	background-color: #227185;
+}
+
+tr.odd td.sorting_1{
+	background-color:#E7F3F7;
+}
+tr.even td.sorting_1{
+	background-color:#F2F9FC;
+}
