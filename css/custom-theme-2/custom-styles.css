@@ -33,16 +33,26 @@
 
 #account_div table, #assets_div table, #lots_div table{
 	margin-bottom: 20px;
-	border-bottom: 1px solid #C6C6C6;
-	border-top: 1px solid #C6C6C6;
+	border: 4px solid #95cdd6;
 }
 
 #account_div table tbody, #assets_div table tbody{
 	text-align: left;
 }
 
+#summary_table td{
+	border-left: 4px solid #95cdd6;
+}
+
+#summary_table td:first-child{
+	border-left: none;
+}
+
 #account_div table th, #assets_div table th, #symbols_table table th, #assets_div table td, #symbols_table td, #lots_div td{
 	padding: 3px 8px;
+	border-left: none;
+	border-top: none;
+	border-right: 4px solid #95cdd6;
 }
 
 #account_div table tr:nth-child(odd), #assets_div table tr:nth-child(odd), #symbols_table tr.odd, #lots_div table tr:nth-child(odd){
@@ -53,12 +63,16 @@
 	border: none;
 }
 
+#account_div td{ padding-left: 8px; }
+
 /*assets table tab*/
 
 #assets_table thead tr:first-child, #symbols_table thead tr:first-child, #symbols_table thead th, #lots_div thead th{
 	background-color: #95cdd6;
 	font-weight: normal;
 	padding: 3px 8px;
+	border-top: none;
+	border-right: 4px solid #95cdd6;
 }
 
 #assets_table tr:hover {
@@ -72,8 +86,9 @@
 /*symbols table tab*/
 
 #symbols_table {
-	border-bottom: 1px solid #C6C6C6;
-	border-top: 1px solid #C6C6C6;
+	border-bottom: 4px solid #95cdd6;
+	border-top: 4px solid #95cdd6;
+	border-left: 4px solid #95cdd6;
 }
 
 #symbols_table thead tr:first-child, #assets_table thead tr:first-child{
