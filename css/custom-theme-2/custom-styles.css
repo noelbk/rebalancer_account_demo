@@ -17,10 +17,10 @@
 }
 
 #account_div, #assets_div, #symbols_div, #lots_div{
-	margin-top: 20px;
+	margin-top: 5px;
 }
 
-#account_div h1, #assets_div h1, #symbols_div h1, #lots_div h1 {
+#account_div h1, #assets_div h1, #symbols_div h1, #lots_div h1, #settings_div h1 {
 	font-size: 24px;
 	border: none;
 }
@@ -31,31 +31,41 @@
 
 /*account info tab*/
 
-#account_div table, #assets_div table, #lots_div table{
+#account_div table,{
+	margin-bottom: 20px;
+	border: none;
+}
+
+#summary_table, #account_status_table, #assets_div table, #lots_div table, #settings_table{
 	margin-bottom: 20px;
 	border: 4px solid #95cdd6;
 }
 
-#account_div table tbody, #assets_div table tbody{
+#account_div table tbody, #assets_div table tbody, #settings_table tbody{
 	text-align: left;
+}
+
+#summary_table {
+	width: 100%;
 }
 
 #summary_table td{
 	border-left: 4px solid #95cdd6;
+	text-align: left;
 }
 
 #summary_table td:first-child{
 	border-left: none;
 }
 
-#account_div table th, #assets_div table th, #symbols_table table th, #assets_div table td, #symbols_table td, #lots_div td{
+#summary_table th, #account_status_table th, #assets_div table th, #symbols_table table th, #assets_div table td, #symbols_table td, #lots_div td, #settings_table td{
 	padding: 3px 8px;
 	border-left: none;
 	border-top: none;
 	border-right: 4px solid #95cdd6;
 }
 
-#account_div table tr:nth-child(odd), #assets_div table tr:nth-child(odd), #symbols_table tr.odd, #lots_div table tr:nth-child(odd){
+#summary_table tr:nth-child(odd), #account_status_table tr:nth-child(odd), #assets_div table tr:nth-child(odd), #symbols_table tr.odd, #lots_div table tr:nth-child(odd), #settings_table tr:nth-child(odd){
 	background: #C1EBF2;
 }
 
@@ -67,7 +77,7 @@
 
 /*assets table tab*/
 
-#assets_table thead tr:first-child, #symbols_table thead tr:first-child, #symbols_table thead th, #lots_div thead th{
+#summary_table tbody tr:first-child, #account_status_table tbody tr:first-child, #symbols_table thead tr:first-child, #symbols_table thead th, #lots_div thead th, #settings_table thead th{
 	background-color: #95cdd6;
 	font-weight: normal;
 	padding: 3px 8px;
