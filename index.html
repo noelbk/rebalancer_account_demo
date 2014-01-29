@@ -52,74 +52,74 @@
       </thead>
       <tbody>
         {%each allocations%}
-	  <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
-	    <td>${allocation}</td><td>${percent}</td>
-	  </tr>
-	  {%each classes%}
-	    <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
-	      <td>${name}</td><td>${percent}</td>
-	    </tr>
-	    {%each subclasses%}
-	      <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
-		<td>${subclass}</td><td>${target}</td>
-	      </tr>
-	    {%/each%}
-	  {%/each%}
-	{%/each%}
+    <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
+      <td>${allocation}</td><td>${percent}</td>
+    </tr>
+    {%each classes%}
+      <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
+        <td>${name}</td><td>${percent}</td>
+      </tr>
+      {%each subclasses%}
+        <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
+    <td>${subclass}</td><td>${target}</td>
+        </tr>
+      {%/each%}
+    {%/each%}
+  {%/each%}
       </tbody>
     </table>
   </script>
 
   <!-- account status template -->
   <script id="account_template" type="text/x-jquery-tmpl">
-    <table border="1" cellspacing="0" cellpadding="0" width="100%">
+    <table border="0" cellspacing="0" cellpadding="0" width="100%">
       <tr>
         <td>
 
     <h1>Summary</h1>
     <table id="summary_table" >
       <tbody>
-	<tr><th>Family Name</th><td>${family_name}</td></tr>
-	<tr><th>Holdings As Of</th><td align="right">${holdings_as_of}</td></tr>
-	<tr><th>Total Value</th><td align="right">${total_value}</td></tr>
-	<tr><th>Fixed Income Current</th><td align="right">${fixed_income_current}</td></tr>
-	<tr><th>Fixed Income Target</th><td align="right">${fixed_income_target}</td></tr>
-	<tr><th>Percent Legacy Positions</th><td align="right">${percent_legacy_positions}</td></tr>
+  <tr><th>Family Name</th><td>${family_name}</td></tr>
+  <tr><th>Holdings As Of</th><td align="right">${holdings_as_of}</td></tr>
+  <tr><th>Total Value</th><td align="right">${total_value}</td></tr>
+  <tr><th>Fixed Income Current</th><td align="right">${fixed_income_current}</td></tr>
+  <tr><th>Fixed Income Target</th><td align="right">${fixed_income_target}</td></tr>
+  <tr><th>Percent Legacy Positions</th><td align="right">${percent_legacy_positions}</td></tr>
       </tbody>
     </table>
 
     <h2>Account Status</h2>  
-    <table border=0>
+    <table id="account_status_table" border=0>
       <tr>
-	<td>Total Value</td>
-	{%each account_status%}<td>${$value.name}</td>{%/each%}
+  <td>Total Value</td>
+  {%each account_status%}<td>${$value.name}</td>{%/each%}
       </tr>
       <tr>
-	<td>Total Value</td>
-	{%each account_status%}<td>${$value.total_value}</td>{%/each%}
+  <td>Total Value</td>
+  {%each account_status%}<td>${$value.total_value}</td>{%/each%}
       </tr>
       <tr>
-	<td>Securities</td>
-	{%each account_status%}<td>${$value.securities}</td>{%/each%}
+  <td>Securities</td>
+  {%each account_status%}<td>${$value.securities}</td>{%/each%}
       </tr>
       <tr>
-	<td>Available Cash</td>
-	{%each account_status%}<td>${$value.available_cash}</td>{%/each%}
+  <td>Available Cash</td>
+  {%each account_status%}<td>${$value.available_cash}</td>{%/each%}
       </tr>
       <tr>
-	<td>Excess Cash</td>
-	{%each account_status%}<td>${$value.excess_cash}</td>{%/each%}
+  <td>Excess Cash</td>
+  {%each account_status%}<td>${$value.excess_cash}</td>{%/each%}
       </tr>
       <tr>
-	<td>Trading</td>
-	{%each account_status%}<td>${$value.trading}</td>{%/each%}
+  <td>Trading</td>
+  {%each account_status%}<td>${$value.trading}</td>{%/each%}
       </tr>
     </table>
 
         </td>
         <td valign="top" width="50%">
-	  account pie!
-          <div id="account_pie"></div>
+          <h2>account pie</h2>
+          <div id="account_pie" style="height: 100%"></div>
         </td>
       </tr>
     </table>
@@ -131,26 +131,26 @@
     <h1>Current Asset Allocation</h1>
     <table border=1 id="assets_table" width="100%" cellspacing="0" cellpadding="0">
       <thead>
-	<tr>
-	  <th>Asset Class</th>
-	  <th>Pct Of Total</th>
-	  <th>Target Pct</th>
-	  <th>Current Pct</th>
-	  <th>Balance</th>
-	  {%each assets[0].taxable%}<th>${account}</th>{%/each%}
-	</tr>
+  <tr>
+    <th>Asset Class</th>
+    <th>Pct Of Total</th>
+    <th>Target Pct</th>
+    <th>Current Pct</th>
+    <th>Balance</th>
+    {%each assets[0].taxable%}<th>${account}</th>{%/each%}
+  </tr>
       </thead>
       <tbody>
-	{%each assets%}
-	  <tr>
-	    <td class="asset_class">${asset_class}</td>
-	    <td>${percent_of_total}</td>
-	    <td>${target_percent}</td>
-	    <td>${current_percent}</td>
-	    <td>${balance}</td>
-	    {%each taxable%}<td>${taxable}</td>{%/each%}
-	  </tr>
-	{%/each%}  
+  {%each assets%}
+    <tr>
+      <td class="asset_class">${asset_class}</td>
+      <td>${percent_of_total}</td>
+      <td>${target_percent}</td>
+      <td>${current_percent}</td>
+      <td>${balance}</td>
+      {%each taxable%}<td>${taxable}</td>{%/each%}
+    </tr>
+  {%/each%}  
       </tbody>
     </table>
   </script>
@@ -160,30 +160,30 @@
     <h1>Symbols for ${asset_class}</h1>
     <table id="symbols_table" width="100%" cellspacing="0" cellpadding="0">
       <thead>
-	<tr>
-	  <th>Symbol</th>
-	  <th>Description</th>
-	  <th>Type</th>
-	  <th>Account</th>
-	  <th>Shares</th>
-	  <th>Current Price</th>
-	  <th>Value</th>
-	  <th>Gain Loss</th>
-	</tr>
+  <tr>
+    <th>Symbol</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Account</th>
+    <th>Shares</th>
+    <th>Current Price</th>
+    <th>Value</th>
+    <th>Gain Loss</th>
+  </tr>
       </thead>
       <tbody>
-	{%each symbols%}
-	<tr>
-	  <td class="symbol_name">${symbol}</td>
-	  <td>${description}</td>
-	  <td>${type}</td>
-	  <td>${account}</td>
-	  <td>${shares}</td>
-	  <td>${current_price}</td>
-	  <td>${value}</td>
-	  <td>${gain_loss}</td>
-	</tr>
-	{%/each%}  
+  {%each symbols%}
+  <tr>
+    <td class="symbol_name">${symbol}</td>
+    <td>${description}</td>
+    <td>${type}</td>
+    <td>${account}</td>
+    <td>${shares}</td>
+    <td>${current_price}</td>
+    <td>${value}</td>
+    <td>${gain_loss}</td>
+  </tr>
+  {%/each%}  
       </tbody>
     </table>
   </script>
@@ -193,28 +193,28 @@
     <h1>Lots for ${symbol}</h1>
     <table id="lots_table" width="100%" cellspacing="0" cellpadding="0">
       <thead>
-	<tr>
-	  <th>Lot</th>
-	  <th>Shares</th>
-	  <th>Buy Date</th>
-	  <th>Buy Price</th>
-	  <th>Cost Basis</th>
-	  <th>Gain Loss</th>
-	  <th>Term</th>
-	</tr>
+  <tr>
+    <th>Lot</th>
+    <th>Shares</th>
+    <th>Buy Date</th>
+    <th>Buy Price</th>
+    <th>Cost Basis</th>
+    <th>Gain Loss</th>
+    <th>Term</th>
+  </tr>
       <thead>
       <tbody>
-	{%each lots%}
-	<tr>
-	  <td>${lot}</td>
-	  <td>${shares}</td>
-	  <td>${buy_date}</td>
-	  <td>${buy_price}</td>
-	  <td>${cost_basis}</td>
-	  <td>${gain_loss}</td>
-	  <td>${term}</td>
-	</tr>
-	{%/each%}  
+  {%each lots%}
+  <tr>
+    <td>${lot}</td>
+    <td>${shares}</td>
+    <td>${buy_date}</td>
+    <td>${buy_price}</td>
+    <td>${cost_basis}</td>
+    <td>${gain_loss}</td>
+    <td>${term}</td>
+  </tr>
+  {%/each%}  
       </tbody>
     </table>
   </script>
@@ -224,18 +224,18 @@
   <script language="javascript">
 
     function fill_lots(symbol) {
-	$("#lots_div" ).empty();
-	$("#lots_template").tmpl(symbol)
-	    .appendTo("#lots_div");
+  $("#lots_div" ).empty();
+  $("#lots_template").tmpl(symbol)
+      .appendTo("#lots_div");
 
-	$("#lots_table").dataTable({
+  $("#lots_table").dataTable({
             "bPaginate": false,
             "bFilter": false,
             "bInfo": false
         });
 
-	$("#lots_div").dialog({
-	  modal: true,
+  $("#lots_div").dialog({
+    modal: true,
           width: "80%",
           height: "500",
           buttons: {
@@ -243,15 +243,15 @@
                   $(this).dialog("close");
               }
           }
-	});
+  });
     }
 
     function fill_symbols(asset) {
-	$("#symbols_div" ).empty();
-	$("#symbols_template").tmpl(asset)
-	    .appendTo("#symbols_div");
+  $("#symbols_div" ).empty();
+  $("#symbols_template").tmpl(asset)
+      .appendTo("#symbols_div");
 
-	$('#symbols_table').on('click', 'tbody tr', function (e) {
+  $('#symbols_table').on('click', 'tbody tr', function (e) {
             e.stopPropagation();
             symbol_name = $(this).find(".symbol_name").text(); 
             $.each(asset['symbols'], function() {
@@ -261,23 +261,23 @@
             });
         });
 
-	$("#symbols_table").find("tbody tr").hover(
-	  function () {
-	    $(this).css("background","yellow");
-	  }, 
-	  function () {
-	    $(this).css("background","");
-	  }
-	);
+  $("#symbols_table").find("tbody tr").hover(
+    function () {
+      $(this).css("background","yellow");
+    }, 
+    function () {
+      $(this).css("background","");
+    }
+  );
 
-	$("#symbols_table").dataTable({
+  $("#symbols_table").dataTable({
             "bPaginate": false,
             "bFilter": false,
             "bInfo": false
         });
 
-	$("#symbols_div").dialog({
-	  modal: true,
+  $("#symbols_div").dialog({
+    modal: true,
           width: "80%",
           height: "500",
           buttons: {
@@ -285,30 +285,30 @@
                   $(this).dialog("close");
               }
           }
-	});
+  });
 
     }
 
     function account_loaded(data) {
-    	// set parent/child ids in data for treetable
-	var tt_id=1;
+      // set parent/child ids in data for treetable
+  var tt_id=1;
         $.each(data['settings']['allocations'] || [], function() {
-	    var allocation_tt_id = tt_id++;
-	    this['tt_id'] = allocation_tt_id;
-	    $.each(this['classes'] || [], function() {
-		var class_tt_id = tt_id++;
-		this['tt_id'] = class_tt_id;
-		this['tt_parent_id'] = allocation_tt_id;
-		$.each(this['subclasses'] || [], function() {
-		    this['tt_id'] = tt_id++;
-		    this['tt_parent_id'] = class_tt_id;
-		});
-	    });
-	});
+      var allocation_tt_id = tt_id++;
+      this['tt_id'] = allocation_tt_id;
+      $.each(this['classes'] || [], function() {
+    var class_tt_id = tt_id++;
+    this['tt_id'] = class_tt_id;
+    this['tt_parent_id'] = allocation_tt_id;
+    $.each(this['subclasses'] || [], function() {
+        this['tt_id'] = tt_id++;
+        this['tt_parent_id'] = class_tt_id;
+    });
+      });
+  });
 
-	$("#settings_div").empty();
-	$("#settings_template").tmpl(data['settings'])
-	    .appendTo("#settings_div");
+  $("#settings_div").empty();
+  $("#settings_template").tmpl(data['settings'])
+      .appendTo("#settings_div");
         $("#settings_table").treetable({ expandable: true });
 
 	$("#account_div" ).empty();
@@ -327,6 +327,7 @@
 	var options = {
 	  title: 'My Daily Activities',
 	  is3D: true,
+          colors: ['#006980', '#127D94', '#2D94AA', '#4BACC0', '#73C7D8']
 	};
 	var chart = new google.visualization.PieChart(document.getElementById('account_pie'));
 	chart.draw(data, options);
@@ -354,7 +355,7 @@
             });
         });
 
-	$("#assets_table").dataTable({
+  $("#assets_table").dataTable({
             "bPaginate": false,
             "bFilter": false,
             "bInfo": false
@@ -364,18 +365,18 @@
 
     $(document).ready( function () {
         /*
-	$('#switcher').themeswitcher({
-	    imgpath: "images/",
-	    loadTheme: "dot-luv",
-	    additionalThemes: [{title:"My theme",name:"my-theme",icon:"my-icon.png",url:"css/ui-lightness/jquery-ui-1.10.4.custom.css"}]
-	});
+  $('#switcher').themeswitcher({
+      imgpath: "images/",
+      loadTheme: "dot-luv",
+      additionalThemes: [{title:"My theme",name:"my-theme",icon:"my-icon.png",url:"css/ui-lightness/jquery-ui-1.10.4.custom.css"}]
+  });
         */
 
         $("#tabs").tabs();
 
-	$.getJSON("account.json", function(data) {
-	    account_loaded(data);
-	})
+  $.getJSON("account.json", function(data) {
+      account_loaded(data);
+  })
     })
 
   </script>
