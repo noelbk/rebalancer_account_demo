@@ -153,11 +153,11 @@
 	  {%each assets%}
 	  <tr>
 	    <td class="asset_class">${asset_class}</td>
-	    <td>${percent_of_total}</td>
-	    <td>${target_percent}</td>
-	    <td>${current_percent}</td>
-	    <td>${balance}</td>
-	    {%each taxable%}<td>${taxable}</td>{%/each%}
+	    <td align="right">${percent_of_total}</td>
+	    <td align="right">${target_percent}</td>
+	    <td align="right">${current_percent}</td>
+	    <td align="right">${balance}</td>
+	    {%each taxable%}<td align="right">${taxable}</td>{%/each%}
 	  </tr>
 	  {%/each%}  
 	</tbody>
