@@ -1,424 +1,434 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Rebalancer Account UI Demo</title>
-  <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-  <script type="text/javascript">
-    google.load("visualization", "1", {packages:["corechart"]});
-  </script>
-  <script src="js/jquery-1.10.2.js"></script>
-  <script src="js/jquery-ui-1.10.4.custom.js"></script>
-  <script src="js/jquery.themeswitcher.js"></script>
-  <script src="js/jquery.treetable.json"></script>
-  <script src="js/jquery.tmpl.js" type="text/javascript"></script>
-  <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+  <head>
+    <meta charset="utf-8">
+    <title>Rebalancer Account UI Demo</title>
 
-  <style type="text/css" title="currentStyle">
-    @import "css/demo_table.css";
-  </style>
+    <link href="css/ui-lightness/jquery-ui-1.10.4.custom.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.treetable.css" />
+    <link rel="stylesheet" href="css/jquery.treetable.theme.default.css" />
 
-  <style type="text/css">
-    body, html {
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+    </script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="js/jquery.themeswitcher.js"></script>
+    <script src="js/jquery.treetable.json"></script>
+    <script src="js/jquery.tmpl.js" type="text/javascript"></script>
+    <script src="js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+    <style type="text/css" title="currentStyle">
+      @import "css/demo_table.css";
+    </style>
+
+    <style type="text/css">
+      body, html {
       height: 95%;
-    }
-    tbody th { text-align: left; }
-  </style>
+      }
+      tbody th { text-align: left; }
+    </style>
 
-  <!--  base stylesheets from live site -->
-  <link rel="stylesheet" href="http://3factorindexing.com/css/default.css">
-  <link rel="stylesheet" href="http://3factorindexing.com/wp-content/themes/parallelus-intersect/css/skins.css">
-  <!-- Open sans for the headings -->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!--  base stylesheets from live site -->
+    <link rel="stylesheet" href="http://3factorindexing.com/css/default.css">
+    <link rel="stylesheet" href="http://3factorindexing.com/wp-content/themes/parallelus-intersect/css/skins.css">
+    <!-- Open sans for the headings -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-  <!-- Theme One -->
-  <!--
-  <link rel="stylesheet" href="css/custom-theme-1/jquery-ui-1.10.4.custom.css">
-  <link rel="stylesheet" href="css/custom-theme-1/custom-styles.css">
-  -->
+    <!-- Theme One -->
+    <!--
+	<link rel="stylesheet" href="css/custom-theme-1/jquery-ui-1.10.4.custom.css">
+	<link rel="stylesheet" href="css/custom-theme-1/custom-styles.css">
+	-->
 
-  <!-- Theme Two -->
-  <link rel="stylesheet" href="css/custom-theme-2/jquery-ui-1.10.4.custom.css">
-  <link rel="stylesheet" href="css/custom-theme-2/custom-styles.css"> 
-
-
-  <!-- settings status template -->
-  <script id="settings_template" type="text/x-jquery-tmpl">
-    <h1>Settings</h1>
-    <table id="settings_table" >
-      <thead>
-        <tr><th>Allocation</th><th>Target</th></tr>
-      </thead>
-      <tbody>
-        {%each allocations%}
-    <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
-      <td>${allocation}</td><td>${percent}</td>
-    </tr>
-    {%each classes%}
-      <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
-        <td>${name}</td><td>${percent}</td>
-      </tr>
-      {%each subclasses%}
-        <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
-    <td>${subclass}</td><td>${target}</td>
-        </tr>
-      {%/each%}
-    {%/each%}
-  {%/each%}
-      </tbody>
-    </table>
-  </script>
-
-  <!-- account status template -->
-  <script id="account_template" type="text/x-jquery-tmpl">
-    <table border="0" cellspacing="0" cellpadding="0" width="100%">
-      <tr>
-        <td>
-
-    <h1>Summary</h1>
-    <table id="summary_table" >
-      <tbody>
-  <tr><th>Family Name</th><td>${family_name}</td></tr>
-  <tr><th>Holdings As Of</th><td align="right">${holdings_as_of}</td></tr>
-  <tr><th>Total Value</th><td align="right">${total_value}</td></tr>
-  <tr><th>Fixed Income Current</th><td align="right">${fixed_income_current}</td></tr>
-  <tr><th>Fixed Income Target</th><td align="right">${fixed_income_target}</td></tr>
-  <tr><th>Percent Legacy Positions</th><td align="right">${percent_legacy_positions}</td></tr>
-      </tbody>
-    </table>
-
-    <h2>Account Status</h2>  
-    <table id="account_status_table" border=0>
-      <tr>
-  <td>Total Value</td>
-  {%each account_status%}<td>${$value.name}</td>{%/each%}
-      </tr>
-      <tr>
-  <td>Total Value</td>
-  {%each account_status%}<td>${$value.total_value}</td>{%/each%}
-      </tr>
-      <tr>
-  <td>Securities</td>
-  {%each account_status%}<td>${$value.securities}</td>{%/each%}
-      </tr>
-      <tr>
-  <td>Available Cash</td>
-  {%each account_status%}<td>${$value.available_cash}</td>{%/each%}
-      </tr>
-      <tr>
-  <td>Excess Cash</td>
-  {%each account_status%}<td>${$value.excess_cash}</td>{%/each%}
-      </tr>
-      <tr>
-  <td>Trading</td>
-  {%each account_status%}<td>${$value.trading}</td>{%/each%}
-      </tr>
-    </table>
-
-        </td>
-        <td valign="top" width="50%">
-          <h2>account pie</h2>
-          <div id="account_pie" style="height: 100%"></div>
-        </td>
-      </tr>
-    </table>
-
-  </script>
-
-  <!-- current asset allocation -->
-  <script id="assets_template" type="text/x-jquery-tmpl">
-    <h1>Current Asset Allocation</h1>
-    <table border=1 id="assets_table" width="100%" cellspacing="0" cellpadding="0">
-      <thead>
-  <tr>
-    <th>Asset Class</th>
-    <th>Pct Of Total</th>
-    <th>Target Pct</th>
-    <th>Current Pct</th>
-    <th>Balance</th>
-    {%each assets[0].taxable%}<th>${account}</th>{%/each%}
-  </tr>
-      </thead>
-      <tbody>
-  {%each assets%}
-    <tr>
-      <td class="asset_class">${asset_class}</td>
-      <td>${percent_of_total}</td>
-      <td>${target_percent}</td>
-      <td>${current_percent}</td>
-      <td>${balance}</td>
-      {%each taxable%}<td>${taxable}</td>{%/each%}
-    </tr>
-  {%/each%}  
-      </tbody>
-    </table>
-  </script>
-
-  <!-- Symbols for asset class -->
-  <script id="symbols_template" type="text/x-jquery-tmpl">
-    <h1>Symbols for ${asset_class}</h1>
-    <table id="symbols_table" width="100%" cellspacing="0" cellpadding="0">
-      <thead>
-  <tr>
-    <th>Symbol</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Account</th>
-    <th>Shares</th>
-    <th>Current Price</th>
-    <th>Value</th>
-    <th>Gain Loss</th>
-  </tr>
-      </thead>
-      <tbody>
-  {%each symbols%}
-  <tr>
-    <td class="symbol_name">${symbol}</td>
-    <td>${description}</td>
-    <td>${type}</td>
-    <td>${account}</td>
-    <td>${shares}</td>
-    <td>${current_price}</td>
-    <td>${value}</td>
-    <td>${gain_loss}</td>
-  </tr>
-  {%/each%}  
-      </tbody>
-    </table>
-  </script>
-
-  <!-- Lots for symbol -->
-  <script id="lots_template" type="text/x-jquery-tmpl">
-    <h1>Lots for ${symbol}</h1>
-    <table id="lots_table" width="100%" cellspacing="0" cellpadding="0">
-      <thead>
-  <tr>
-    <th>Lot</th>
-    <th>Shares</th>
-    <th>Buy Date</th>
-    <th>Buy Price</th>
-    <th>Cost Basis</th>
-    <th>Gain Loss</th>
-    <th>Term</th>
-  </tr>
-      <thead>
-      <tbody>
-  {%each lots%}
-  <tr>
-    <td>${lot}</td>
-    <td>${shares}</td>
-    <td>${buy_date}</td>
-    <td>${buy_price}</td>
-    <td>${cost_basis}</td>
-    <td>${gain_loss}</td>
-    <td>${term}</td>
-  </tr>
-  {%/each%}  
-      </tbody>
-    </table>
-  </script>
+    <!-- Theme Two -->
+    <link rel="stylesheet" href="css/custom-theme-2/jquery-ui-1.10.4.custom.css">
+    <link rel="stylesheet" href="css/custom-theme-2/custom-styles.css"> 
 
 
-  <!-- http://yamltojson.com/ -->
-  <script language="javascript">
+    <!-- settings status template -->
+    <script id="settings_template" type="text/x-jquery-tmpl">
+      <h1>Settings</h1>
+      <table id="settings_table" width="60%">
+	<thead>
+          <tr>
+	    <th>Allocation</th>
+	    <th align="center">Target</th>
+	    <th align="center">Percent</th>
+	    <th align="center">Percent</th>
+	  </tr>
+	</thead>
+	<tbody>
+          {%each allocations%}
+	  <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
+	    <td>${allocation}</td><td align="right">${percent}</td><td></td><td></td>
+	  </tr>
+	  {%each classes%}
+	  <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
+            <td>${name}</td><td></td><td align="right">${percent}</td><td></td>
+	  </tr>
+	  {%each subclasses%}
+          <tr data-tt-id="${tt_id}" data-tt-parent-id="${tt_parent_id}">
+	    <td>${subclass}</td><td></td><td></td><td align="right">${target}</td>
+          </tr>
+	  {%/each%}
+	  {%/each%}
+	  {%/each%}
+	</tbody>
+      </table>
+    </script>
 
-    function fill_lots(symbol) {
-  $("#lots_div" ).empty();
-  $("#lots_template").tmpl(symbol)
-      .appendTo("#lots_div");
+    <!-- account status template -->
+    <script id="account_template" type="text/x-jquery-tmpl">
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+          <td>
+<
+	    <h1>Summary</h1>
+	    <table id="summary_table" >
+	      <tbody>
+		<tr><th>Family Name</th><td>${family_name}</td></tr>
+		<tr><th>Holdings As Of</th><td align="right">${holdings_as_of}</td></tr>
+		<tr><th>Total Value</th><td align="right">${total_value}</td></tr>
+		<tr><th>Fixed Income Current</th><td align="right">${fixed_income_current}</td></tr>
+		<tr><th>Fixed Income Target</th><td align="right">${fixed_income_target}</td></tr>
+		<tr><th>Percent Legacy Positions</th><td align="right">${percent_legacy_positions}</td></tr>
+	      </tbody>
+	    </table>
 
-  $("#lots_table").dataTable({
-            "bPaginate": false,
-            "bFilter": false,
-            "bInfo": false
-        });
+	    <h2>Account Status</h2>  
+	    <table id="account_status_table" border=0>
+	      <tr>
+		<td>Total Value</td>
+		{%each account_status%}<td>${$value.name}</td>{%/each%}
+	      </tr>
+	      <tr>
+		<td>Total Value</td>
+		{%each account_status%}<td>${$value.total_value}</td>{%/each%}
+	      </tr>
+	      <tr>
+		<td>Securities</td>
+		{%each account_status%}<td>${$value.securities}</td>{%/each%}
+	      </tr>
+	      <tr>
+		<td>Available Cash</td>
+		{%each account_status%}<td>${$value.available_cash}</td>{%/each%}
+	      </tr>
+	      <tr>
+		<td>Excess Cash</td>
+		{%each account_status%}<td>${$value.excess_cash}</td>{%/each%}
+	      </tr>
+	      <tr>
+		<td>Trading</td>
+		{%each account_status%}<td>${$value.trading}</td>{%/each%}
+	      </tr>
+	    </table>
 
-  $("#lots_div").dialog({
-    modal: true,
-          width: "80%",
-          height: "500",
-          buttons: {
-              "OK": function() {
-                  $(this).dialog("close");
-              }
-          }
-  });
-    }
+          </td>
+          <td valign="top" width="50%">
+            <h2>account pie</h2>
+            <div id="account_pie" style="height: 100%"></div>
+          </td>
+	</tr>
+      </table>
 
-    function fill_symbols(asset) {
-  $("#symbols_div" ).empty();
-  $("#symbols_template").tmpl(asset)
-      .appendTo("#symbols_div");
+    </script>
 
-  $('#symbols_table').on('click', 'tbody tr', function (e) {
-            e.stopPropagation();
-            symbol_name = $(this).find(".symbol_name").text(); 
-            $.each(asset['symbols'], function() {
-                if( this.symbol == symbol_name ) {
-                    fill_lots(this);
-                }
-            });
-        });
+    <!-- current asset allocation -->
+    <script id="assets_template" type="text/x-jquery-tmpl">
+      <h1>Current Asset Allocation</h1>
+      <table border=1 id="assets_table" width="100%" cellspacing="0" cellpadding="0">
+	<thead>
+	  <tr>
+	    <th>Asset Class</th>
+	    <th>Pct Of Total</th>
+	    <th>Target Pct</th>
+	    <th>Current Pct</th>
+	    <th>Balance</th>
+	    {%each assets[0].taxable %}<th>${account}</th>{%/each%}
+	  </tr>
+	</thead>
+	<tbody>
+	  {%each assets%}
+	  <tr>
+	    <td class="asset_class">${asset_class}</td>
+	    <td>${percent_of_total}</td>
+	    <td>${target_percent}</td>
+	    <td>${current_percent}</td>
+	    <td>${balance}</td>
+	    {%each taxable%}<td>${taxable}</td>{%/each%}
+	  </tr>
+	  {%/each%}  
+	</tbody>
+      </table>
+    </script>
 
-  $("#symbols_table").find("tbody tr").hover(
-    function () {
-      $(this).css("background","yellow");
-    }, 
-    function () {
-      $(this).css("background","");
-    }
-  );
+    <!-- Symbols for asset class -->
+    <script id="symbols_template" type="text/x-jquery-tmpl">
+      <h1>Symbols for ${asset_class}</h1>
+      <table id="symbols_table" width="100%" cellspacing="0" cellpadding="0">
+	<thead>
+	  <tr>
+	    <th>Symbol</th>
+	    <th>Description</th>
+	    <th>Type</th>
+	    <th>Account</th>
+	    <th>Shares</th>
+	    <th>Current Price</th>
+	    <th>Value</th>
+	    <th>Gain Loss</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {%each symbols%}
+	  <tr>
+	    <td class="symbol_name">${symbol}</td>
+	    <td>${description}</td>
+	    <td>${type}</td>
+	    <td>${account}</td>
+	    <td>${shares}</td>
+	    <td>${current_price}</td>
+	    <td>${value}</td>
+	    <td>${gain_loss}</td>
+	  </tr>
+	  {%/each%}  
+	</tbody>
+      </table>
+    </script>
 
-  $("#symbols_table").dataTable({
-            "bPaginate": false,
-            "bFilter": false,
-            "bInfo": false
-        });
+    <!-- Lots for symbol -->
+    <script id="lots_template" type="text/x-jquery-tmpl">
+      <h1>Lots for ${symbol}</h1>
+      <table id="lots_table" width="100%" cellspacing="0" cellpadding="0">
+	<thead>
+	  <tr>
+	    <th>Lot</th>
+	    <th>Shares</th>
+	    <th>Buy Date</th>
+	    <th>Buy Price</th>
+	    <th>Cost Basis</th>
+	    <th>Gain Loss</th>
+	    <th>Term</th>
+	  </tr>
+	<thead>
+	  <tbody>
+	    {%each lots%}
+	    <tr>
+	      <td>${lot}</td>
+	      <td>${shares}</td>
+	      <td>${buy_date}</td>
+	      <td>${buy_price}</td>
+	      <td>${cost_basis}</td>
+	      <td>${gain_loss}</td>
+	      <td>${term}</td>
+	    </tr>
+	    {%/each%}  
+	  </tbody>
+      </table>
+    </script>
 
-  $("#symbols_div").dialog({
-    modal: true,
-          width: "80%",
-          height: "500",
-          buttons: {
-              "OK": function() {
-                  $(this).dialog("close");
-              }
-          }
-  });
 
-    }
+    <!-- http://yamltojson.com/ -->
+    <script language="javascript">
 
-    function account_loaded(data) {
-      // set parent/child ids in data for treetable
-  var tt_id=1;
-        $.each(data['settings']['allocations'] || [], function() {
-      var allocation_tt_id = tt_id++;
-      this['tt_id'] = allocation_tt_id;
-      $.each(this['classes'] || [], function() {
-    var class_tt_id = tt_id++;
-    this['tt_id'] = class_tt_id;
-    this['tt_parent_id'] = allocation_tt_id;
-    $.each(this['subclasses'] || [], function() {
-        this['tt_id'] = tt_id++;
-        this['tt_parent_id'] = class_tt_id;
+function fill_lots(symbol) {
+    $("#lots_div" ).empty();
+    $("#lots_template").tmpl(symbol)
+	.appendTo("#lots_div");
+
+    $("#lots_table").dataTable({
+        "bPaginate": false,
+        "bFilter": false,
+        "bInfo": false
     });
-      });
-  });
 
-  $("#settings_div").empty();
-  $("#settings_template").tmpl(data['settings'])
-      .appendTo("#settings_div");
-        $("#settings_table").treetable({ expandable: true });
+    $("#lots_div").dialog({
+	modal: true,
+        width: "80%",
+        height: "500",
+        buttons: {
+            "OK": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+}
 
-	$("#account_div" ).empty();
-	$("#account_template").tmpl(data)
-	    .appendTo("#account_div");
+function fill_symbols(asset) {
+    $("#symbols_div" ).empty();
+    $("#symbols_template").tmpl(asset)
+	.appendTo("#symbols_div");
 
-	// pie chart on account summary
-	var data = google.visualization.arrayToDataTable([
-	  ['Task', 'Hours per Day'],
-	  ['Work',     11],
-	  ['Eat',      2],
-	  ['Commute',  2],
-	  ['Watch TV', 2],
-	  ['Sleep',    7]
-	]);
-	var options = {
-	  title: 'My Daily Activities',
-	  is3D: true,
-          colors: ['#006980', '#127D94', '#2D94AA', '#4BACC0', '#73C7D8']
-	};
-	var chart = new google.visualization.PieChart(document.getElementById('account_pie'));
-	chart.draw(data, options);
+    $('#symbols_table').on('click', 'tbody tr', function (e) {
+        e.stopPropagation();
+        symbol_name = $(this).find(".symbol_name").text(); 
+        $.each(asset['symbols'], function() {
+            if( this.symbol == symbol_name ) {
+                fill_lots(this);
+            }
+        });
+    });
 
-	$("#assets_div" ).empty();
-	$("#assets_template").tmpl(data)
-	    .appendTo("#assets_div");
-
-	$("#assets_table").find("tbody tr").hover(
-	  function () {
+    $("#symbols_table").find("tbody tr").hover(
+	function () {
 	    $(this).css("background","yellow");
-	  }, 
-	  function () {
+	}, 
+	function () {
 	    $(this).css("background","");
-	  }
-	);
+	}
+    );
 
-	$('#assets_table').on('click', 'tbody tr', function (e) {
-            e.stopPropagation();
-            asset_class = $(this).find(".asset_class").text(); 
-            $.each(data['assets'], function(asset) {
-                if( this.asset_class == asset_class ) {
-                    fill_symbols(this);
-                }
-            });
+    $("#symbols_table").dataTable({
+        "bPaginate": false,
+        "bFilter": false,
+        "bInfo": false
+    });
+
+    $("#symbols_div").dialog({
+	modal: true,
+        width: "80%",
+        height: "500",
+        buttons: {
+            "OK": function() {
+                $(this).dialog("close");
+            }
+        }
+    });
+
+}
+
+function account_loaded(data) {
+    // set parent/child ids in data for treetable
+    var tt_id=1;
+    $.each(data['settings']['allocations'] || [], function() {
+	var allocation_tt_id = tt_id++;
+	this['tt_id'] = allocation_tt_id;
+	$.each(this['classes'] || [], function() {
+	    var class_tt_id = tt_id++;
+	    this['tt_id'] = class_tt_id;
+	    this['tt_parent_id'] = allocation_tt_id;
+	    $.each(this['subclasses'] || [], function() {
+		this['tt_id'] = tt_id++;
+		this['tt_parent_id'] = class_tt_id;
+	    });
+	});
+    });
+
+    $("#settings_div").empty();
+    $("#settings_template").tmpl(data['settings'])
+	.appendTo("#settings_div");
+    $("#settings_table").treetable({ expandable: true });
+
+    $("#account_div" ).empty();
+    $("#account_template").tmpl(data)
+	.appendTo("#account_div");
+
+    // pie chart on account summary
+    var pie_data = google.visualization.arrayToDataTable([
+	['Task', 'Hours per Day'],
+	['Work',     11],
+	['Eat',      2],
+	['Commute',  2],
+	['Watch TV', 2],
+	['Sleep',    7]
+    ]);
+    var options = {
+	title: 'My Daily Activities',
+	is3D: true,
+        colors: ['#006980', '#127D94', '#2D94AA', '#4BACC0', '#73C7D8']
+    };
+    var chart = new google.visualization.PieChart(document.getElementById('account_pie'));
+    chart.draw(pie_data, options);
+
+    $("#assets_div" ).empty();
+    $("#assets_template").tmpl(data)
+	.appendTo("#assets_div");
+
+    $("#assets_table").find("tbody tr").hover(
+	function () {
+	    $(this).css("background","yellow");
+	}, 
+	function () {
+	    $(this).css("background","");
+	}
+    );
+
+    $('#assets_table').on('click', 'tbody tr', function (e) {
+        e.stopPropagation();
+        asset_class = $(this).find(".asset_class").text(); 
+        $.each(data['assets'], function(asset) {
+            if( this.asset_class == asset_class ) {
+                fill_symbols(this);
+            }
         });
+    });
 
-  $("#assets_table").dataTable({
-            "bPaginate": false,
-            "bFilter": false,
-            "bInfo": false
-        });
+    $("#assets_table").dataTable({
+        "bPaginate": false,
+        "bFilter": false,
+        "bInfo": false
+    });
 
-    }
+}
 
-    $(document).ready( function () {
-        /*
-  $('#switcher').themeswitcher({
+$(document).ready( function () {
+    /*
+      $('#switcher').themeswitcher({
       imgpath: "images/",
       loadTheme: "dot-luv",
       additionalThemes: [{title:"My theme",name:"my-theme",icon:"my-icon.png",url:"css/ui-lightness/jquery-ui-1.10.4.custom.css"}]
-  });
-        */
+      });
+    */
 
-        $("#tabs").tabs();
+    $("#tabs").tabs();
 
-  $.getJSON("account.json", function(data) {
-      account_loaded(data);
-  })
+    $.getJSON("account.json", function(data) {
+	account_loaded(data);
     })
+})
 
   </script>
 
-</head>
-<body class="blue">
+  </head>
+  <body class="blue">
 
-<div id="main" style="height: 85%">
-  <div class="demoIntro">
-    <h1>3FactorIndexing Account HTML5 Demo</h1>
+    <div id="main" style="height: 85%">
+      <div class="demoIntro">
+	<h1>3FactorIndexing Account HTML5 Demo</h1>
 
-    <p>The templates below are filled out from <a href="account.json">account.json</a>.</p>
-  </div>
+	<p>The templates below are filled out from <a href="account.json">account.json</a>.</p>
+      </div>
+      
+      <div id="switcher"></div>
+
+      <div id="tabs" style="border: 1px solid black; height: 100%">
+	<ul>
+	  <li><a href="#tab-1">Summary</a></li>
+	  <li><a href="#tab-2">Assets</a></li>
+	  <li><a href="#tab-3">Settings</a></li>
+	</ul>
+
+	<div id="tab-1">
+	  <div id="account_div"></div>
+	</div>
+
+	<div id="tab-2">
+	  <div id="assets_div"></div>
+
+	  <div id="symbols_div"></div>
+
+	  <div id="lots_div"></div>
+	</div>
+
+	<div id="tab-3">
+	  <div id="settings_div"></div>
+	</div>
+
+      </div>
+    </div>
+
+  </body> 
   
-  <div id="switcher"></div>
-
-  <div id="tabs" style="border: 1px solid black; height: 100%">
-    <ul>
-      <li><a href="#tab-1">Summary</a></li>
-      <li><a href="#tab-2">Assets</a></li>
-      <li><a href="#tab-3">Settings</a></li>
-    </ul>
-
-    <div id="tab-1">
-      <div id="account_div"></div>
-    </div>
-
-    <div id="tab-2">
-      <div id="assets_div"></div>
-
-      <div id="symbols_div"></div>
-
-      <div id="lots_div"></div>
-    </div>
-
-    <div id="tab-3">
-      <div id="settings_div"></div>
-    </div>
-
-  </div>
-</div>
-
-</body> 
- 
 </html>
