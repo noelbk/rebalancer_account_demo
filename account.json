@@ -1,385 +1,982 @@
 {
-  "family_name": "Smith", 
-  "total_value": 5000000, 
-  "holdings_as_of": "01/01/2014", 
-  "fixed_income_current": "31%", 
-  "fixed_income_target": "35%", 
-  "percent_legacy_positions": "2%",
-  "account_status": [
-    {
-      "name": "Sam and Mary Taxble", 
-      "total_value": 1, 
-      "securities": 2, 
-      "available_cash": 3, 
-      "excess_cash": 4,
-      "trading": 5
+    "family_name": "Smith", 
+    "total_value": "$6,283,236.67" , 
+    "holdings_as_of": "01/01/2014", 
+    "fixed_income_current": "31%", 
+    "fixed_income_target": "35%", 
+    "percent_legacy_positions": "22%",
+    "account_status": [
+	{
+	    "name": "Joint Account", 
+	    "total_value": "$5,690,913.08" , 
+	    "securities": "$5,679,633.69" , 
+	    "available_cash": "$11,179.39" , 
+	    "excess_cash": "$279.39" ,
+	    "trading": "Y"
+	}, 
+	{
+	    "name": "Pete IRA", 
+	    "total_value": "$502,716.14" , 
+	    "securities": "$502,207.88" , 
+	    "available_cash": "$508.26" , 
+	    "excess_cash": "$8.26" ,
+	    "trading": "Y"
+	}, 
+	{
+	    "name": "Karen IRA", 
+	    "securities": "$59,790.56" , 
+	    "available_cash": "$500.24" , 
+	    "trading": "Y", 
+	    "total_value": "$60290.80" , 
+	    "excess_cash": "$0.24" 
+	}, 
+	{
+	    "name": "Outside", 
+	    "securities": "$282258", 
+	    "available_cash": "$0", 
+	    "trading": "N", 
+	    "total_value": "$282258", 
+	    "excess_cash": "$0"
+	}
+    ], 
+    "assets": [
+	{
+	    "asset_class": "US-MarketTilt2", 
+	    "percent_of_total": "70.0%", 
+	    "current_percent": "34.0%", 
+	    "target_percent": "29.9%",
+	    "balance": "-", 
+	    "symbols": [
+		{
+		    "symbol": "DFTCX", 
+		    "account": "Joint Account", 
+		    "description": "DFA T.A. US Core Equity 2 Portfolio", 
+		    "shares": "21,885.861", 					
+		    "current_price": "$12.99", 
+		    "value": "$284,297", 						
+		    "gain_loss": "$99,372", 
+		    
+		    "type": "MF",
+		    "lots": [
+			{
+			    "term": "LT", 
+			    "buy_date": "01/14/2013", 
+			    "shares": "4348.261", 					
+			    "lot": "-", 
+			    "gain_loss": "$11,559", 
+			    "cost_basis": "$44,924", 
+			    "buy_price": "$10.33"
+			}, 
+			{
+			    "term": "LT", 
+			    "buy_date": "09/27/2011", 
+			    "shares": "n,nnn,nnn", 
+			    "lot": "-", 
+			    "gain_loss": "$87,813", 
+			    "cost_basis": "$140,000", 
+			    "buy_price": "$7.98"
+			}
+		    ]
+		}, 
+		{
+		    "symbol": "DFEOX", 
+		    "shares": "21,885.000", 
+		    "current_price": "$12.99", 
+		    "value": "$1,505,164", 
+		    "gain_loss": "$451,686", 
+		    "type": "-",
+		    "account": "Joint Account", 
+		    "description": "DFA US Core Equity Portfolio I", 
+		    "lots": [
+			{
+			    "term": "LT", 
+			    "buy_date": "05/22/2012", 
+			    "shares": "93,721.357", 
+			    "lot": "-", 
+			    "gain_loss": "451,686", 
+			    "cost_basis": "$1,053,478", 
+			    "buy_price": "$11.24"
+			}
+		    ]
+		},
+		{
+		    "symbol": "DODGX", 
+		    "account": "Joint Account", 
+		    "description": "Dodge & Cox Fund", 
+		    "shares": "2,022.015", 
+		    "current_price": "$164.19", 
+		    "value": "$331,994", 
+		    "gain_loss": "122,372", 
+		    "type": "Legacy",
+		    "lots": [
+			{
+			    "term": "LT", 
+			    "buy_date": "09/01/2010", 
+			    "shares": "2,022.015", 
+			    "lot": "-", 
+			    "gain_loss": "$122,372", 
+			    "cost_basis": "$209,622", 
+			    "buy_price": "$103.67"
+			}
+		    ]
+		}
+	    ], 
+	    "taxable": [
+		{
+		    "taxable": "$2,121,455", 
+		    "account": "Joint Account"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Pete IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Karen IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Outside"
+		}
+	    ]
+	},
+	{
+	    "asset_class": "Dev-MarketTilt1", 
+	    "percent_of_total": "30.0%", 
+	    "current_percent": "6.0%", 
+	    "target_percent": "5.8%",
+	    "balance": "-",
+	    "symbols": [
+		{
+		    "symbol": "DFIEX", 
+		    "account": "Joint Account", 
+		    "description": "DFA International Core Equity Portfolio", 
+		    "shares": "26,768.823", 					
+		    "current_price": "$12.58", 
+		    "value": "$336,751", 						
+		    "gain_loss": "$87,751", 
+		    "type": "MF",
+		    "lots": [
+			{
+			    "term": "LT", 
+			    "buy_date": "09/27/2011", 
+			    "shares": "26,768.823", 					
+			    "lot": "-", 
+			    "gain_loss": "$87,751", 
+			    "cost_basis": "$249,000", 
+			    "buy_price": "$9.30"
+			}
+		    ]
+		}, 
+		{
+		    "symbol": "DFVQX", 
+		    "shares": "2,980.436", 
+		    "current_price": "$11.73", 
+		    "value": "$34,960", 
+		    "gain_loss": "$8,563", 
+		    "type": "-",
+		    "account": "Joint Account", 
+		    "description": "DFA Internaltional Vector Equity Portfolio", 
+		    "lots": [
+			{
+			    "term": "LT", 
+			    "buy_date": "08/30/2012", 
+			    "shares": "2,980.436", 
+			    "lot": "-", 
+			    "gain_loss": "$8,563", 
+			    "cost_basis": "$26,397", 
+			    "buy_price": "$8.85"
+			}
+		    ]
+		}
+	    ], 
+	    "taxable": [
+		{
+		    "taxable": "$371,711", 
+		    "account": "Joint Account"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Peet IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Karen IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Outside"
+		}
+	    ]
+	},
+	{
+	    "asset_class": "Dev-Large", 
+	    "percent_of_total": "70%", 
+	    "current_percent": "14.4%", 
+	    "target_percent": "13.6%",
+	    "balance": "-",
+	    "symbols": [
+		{
+		    "symbol": "VEA", 
+		    "account": "Joint Account", 
+		    "description": "Vanguard MSCI EAFE ETF", 
+		    "shares": "22,346.000", 					
+		    "current_price": "$40.04", 
+		    "value": "$894,733", 						
+		    "gain_loss": "$87,751", 
+		    
+		    "type": "ETF",
+		    "lots": [
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "9,100.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$95,091", 
+			    "cost_basis": "$269,272", 
+			    "buy_price": "$26.59"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "6,746.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$70,495", 
+			    "cost_basis": "$199,614", 
+			    "buy_price": "$26.59"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "2,500.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$26,126", 
+			    "cost_basis": "$73,973", 
+			    "buy_price": "$26.58"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "200.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$2,090", 
+			    "cost_basis": "$5,917", 
+			    "buy_price": "$26.58"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "200.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$2,090", 
+			    "cost_basis": "$5,917", 
+			    "buy_price": "$26.58"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "200.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$2,090", 
+			    "cost_basis": "$5,917", 
+			    "buy_price": "$26.58"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "100.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$1,045", 
+			    "cost_basis": "$2,958", 
+			    "buy_price": "$26.58"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "100.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$1,045", 
+			    "cost_basis": "$2,958", 
+			    "buy_price": "$26.58"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "100.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$1,045", 
+			    "cost_basis": "$2,958", 
+			    "buy_price": "$26.58"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "100.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$1,045", 
+			    "cost_basis": "$2,958", 
+			    "buy_price": "$26.58"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "100.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$1,045", 
+			    "cost_basis": "$2,958", 
+			    "buy_price": "$26.58"
+			}
+		    ]
+		}
+            ], 
+	    "taxable": [
+		{
+		    "taxable": "$894,733", 
+		    "account": "Joint Account"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Peeet IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Karen IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Outside"
+		}
+	    ]
+	},
+	{
+	    "asset_class": "Emerg-MarketTilt1", 
+	    "percent_of_total": "40.0%", 
+	    "current_percent": "3.0%", 
+	    "target_percent": "3.6%",
+	    "balance": "-",
+	    "symbols": [
+		{
+		    "symbol": "DFCEX", 
+		    "account": "Joint Account", 
+		    "description": "DFA Emerging Markets Core Equity Portfolio", 
+		    "shares": "9,685.885", 					
+		    "current_price": "$18.29", 
+		    "value": "$177,154", 						
+		    "gain_loss": "$8,888", 							
+		    "type": "MF",
+		    "lots": [
+			{
+			    "term": "ST", 
+			    "buy_date": "01/13/2014", 
+			    "shares": "1102.482", 					
+			    "lot": "-", 
+			    "gain_loss": "-$788", 
+			    "cost_basis": "$20,953", 
+			    "buy_price": "$19.00"
+			},
+			{
+			    "term": "ST", 
+			    "buy_date": "08/05/2012", 
+			    "shares": "600.429", 					
+			    "lot": "-", 
+			    "gain_loss": "-$332", 
+			    "cost_basis": "$11,314", 
+			    "buy_price": "$18.84"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "09/27/2011", 
+			    "shares": "7,982.974", 					
+			    "lot": "-", 
+			    "gain_loss": "10,008", 
+			    "cost_basis": "136,000", 
+			    "buy_price": "$17.03"
+			}
+		    ]
+		}, 
+		{
+		    "symbol": "DFCEX", 
+		    "shares": "426.361", 
+		    "current_price": "$18.29", 
+		    "value": "$7,798", 
+		    "gain_loss": "$8,563", 
+		    "type": "-",
+		    "account": "Pete IRA", 
+		    "description": "DFA Emerging Markets Core Equity Portfolio"
+		}
+	    ], 
+	    "taxable": [					
+		{
+		    "taxable": "$177,154", 
+		    "account": "Joint Account"
+		}, 
+		{
+		    "taxable": "7,798", 
+		    "account": "Peet IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Karen IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Outside"
+		}
+	    ]
+	},
+	{
+	    "asset_class": "Emerg-LargeValue", 
+	    "percent_of_total": "60.0%", 
+	    "current_percent": "4.4%", 
+	    "target_percent": "5.5%",
+	    "balance": "-",
+	    "symbols": [
+		{
+		    "symbol": "DFEVX", 
+		    "account": "Joint Account", 
+		    "description": "DFA Emerging Markets Value Portfolio", 
+		    "shares": "10,710.365", 					
+		    "current_price": "$25.82", 
+		    "value": "$276,541", 						
+		    "gain_loss": "$8,888", 
+		    "type": "MF",
+		    "lots": [
+			{
+			    "term": "ST", 
+			    "buy_date": "01/13/2014", 
+			    "shares": "1,763.201", 					
+			    "lot": "-", 
+			    "gain_loss": "-$1,813", 
+			    "cost_basis": "$47,339", 
+			    "buy_price": "$26.84"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "05/23/2012", 
+			    "shares": "8,947.164", 					
+			    "lot": "-", 
+			    "gain_loss": "$844", 
+			    "cost_basis": "$230,171", 
+			    "buy_price": "$25.72"
+			}
+		    ]
+		}
+	    ], 
+	    "taxable": [					
+		{
+		    "taxable": "$276,541", 
+		    "account": "Joint Account"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Peet IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Karen IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Outside"
+		}
+	    ]
+	},
+	{
+	    "asset_class": "REIT-Global", 
+	    "percent_of_total": "100.0%", 
+	    "current_percent": "6.4%", 
+	    "target_percent": "6.5%",
+	    "balance": "-",
+	    "symbols": [
+		{
+		    "symbol": "DFGEX", 
+		    "account": "Joint Account", 
+		    "description": "DFA Global Real Estate Portfolio", 
+		    "shares": "27,893.557", 					
+		    "current_price": "$8.93", 
+		    "value": "$249,089", 						
+		    "gain_loss": "$1,820", 							
+		    "type": "MF",
+		    "lots": [
+			{
+			    "term": "ST", 
+			    "buy_date": "01/13/2014", 
+			    "shares": "6,139.670", 					
+			    "lot": "-", 
+			    "gain_loss": "-$172", 
+			    "cost_basis": "$55,000", 
+			    "buy_price": "$8.95"
+			},
+			{
+			    "term": "ST", 
+			    "buy_date": "01/13/2014", 
+			    "shares": "17,001.349", 					
+			    "lot": "-", 
+			    "gain_loss": "-$49", 
+			    "cost_basis": "$151,872", 
+			    "buy_price": "$8.93"
+			},
+			{
+			    "term": "LT", 
+			    "buy_date": "02/07/2012", 
+			    "shares": "4,752.538", 					
+			    "lot": "-", 
+			    "gain_loss": "$2,041", 
+			    "cost_basis": "$40,399", 
+			    "buy_price": "$8.50"
+			}
+		    ]
+		},
+		{
+		    "symbol": "DFGEX", 
+		    "account": "Pete IRA", 
+		    "description": "DFA Global Real Estate Portfolio", 
+		    "shares": "11,594.393", 					
+		    "current_price": "$8.93",
+		    "value": "$103,537",
+		    "gain_loss": "N/A",
+		    "type": "MF"
+		},
+		{
+		    "symbol": "DFGEX", 
+		    "account": "Karen IRA", 
+		    "description": "DFA Global Real Estate Portfolio", 
+		    "shares": "5,005.009", 					
+		    "current_price": "$8.93", 
+		    "value": "$44,694", 						
+		    "gain_loss": "N/A", 							
+		    "type": "MF"
+		}
+	    ], 
+	    "taxable": [					
+		{
+		    "taxable": "$249,089", 
+		    "account": "Joint Account"
+		}, 
+		{
+		    "taxable": "103,537", 
+		    "account": "Peet IRA"
+		}, 
+		{
+		    "taxable": "44,694", 
+		    "account": "Karen IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Outside"
+		}
+	    ]
+	},
+	{
+	    "asset_class": "Fixed-USCorpInt", 
+	    "percent_of_total": "60.0%", 
+	    "current_percent": "17.6%", 
+	    "target_percent": "21.0%",
+	    "balance": "-",
+	    "symbols": [
+		{
+		    "symbol": "DFGEX", 
+		    "account": "Joint Account", 
+		    "description": "DFA Investment Grade Portfolio", 
+		    "shares": "1,670.218", 					
+		    "current_price": "$10.52", 
+		    "value": "$17,570", 						
+		    "gain_loss": "-$235", 							
+		    "type": "MF",
+		    "lots": [
+			{
+			    "term": "LT", 
+			    "buy_date": "09/01/2011", 
+			    "shares": "1,670.218", 					
+			    "lot": "-", 
+			    "gain_loss": "-$235", 
+			    "cost_basis": "$17,806", 
+			    "buy_price": "$10.66"
+			}
+		    ]
+		},
+		{
+		    "symbol": "DFTEX", 
+		    "account": "Joint Account", 
+		    "description": "DFA Intermediate Term Extended Quality Portfolio", 
+		    "shares": "68,809.236", 					
+		    "current_price": "$10.49", 
+		    "value": "$721,808", 						
+		    "gain_loss": "2,740", 							
+		    "type": "MF",
+		    "lots": [
+			{
+			    "term": "ST", 
+			    "buy_date": "01/13/2014", 
+			    "shares": "66,980.866", 					
+			    "lot": "-", 
+			    "gain_loss": "$2,629", 
+			    "cost_basis": "$700,000", 
+			    "buy_price": "$10.45"
+			},
+			{
+			    "term": "ST", 
+			    "buy_date": "09/27/2014", 
+			    "shares": "1,828.370", 					
+			    "lot": "-", 
+			    "gain_loss": "$114", 
+			    "cost_basis": "$19,065", 
+			    "buy_price": "$10.45"
+			}
+		    ]
+		},
+		{
+		    "symbol": "VCIT", 
+		    "account": "Joint Account", 
+		    "description": "Vanguard Intermediate Tm Cpte Bd ETF", 
+		    "shares": "1,565.000", 					
+		    "current_price": "$84.09", 
+		    "value": "$131,600", 						
+		    "gain_loss": "$393", 							
+		    "type": "ETF",
+		    "lots": [
+			{
+			    "term": "ST", 
+			    "buy_date": "02/07/2012", 
+			    "shares": "1,565.000", 					
+			    "lot": "-", 
+			    "gain_loss": "$2,629", 
+			    "cost_basis": "$131,992.100", 
+			    "buy_price": "$84.34"
+			}
+		    ]
+		},
+		{
+		    "symbol": "DFAPX", 
+		    "account": "Pete IRA", 
+		    "description": "DFA Investment Grade Portfolio", 
+		    "shares": "1,450.924", 					
+		    "current_price": "$10.52", 
+		    "value": "$15,263", 						
+		    "gain_loss": "N/A", 							
+		    "type": "MF"
+		},
+		{
+		    "symbol": "DFTEX", 
+		    "account": "Pete IRA", 
+		    "description": "DFA Intermediate Term Extended Quality Portfolio", 
+		    "shares": "3,705.999", 					
+		    "current_price": "$10.49", 
+		    "value": "$38,875", 						
+		    "gain_loss": "N/A", 							
+		    "type": "MF"
+		},
+		{
+		    "symbol": "VCIT", 
+		    "account": "Pete IRA", 
+		    "description": "Vanguard Intermediate Tm Cpte Bd ETF", 
+		    "shares": "2,079.000", 					
+		    "current_price": "$84.09", 
+		    "value": "$174,823", 						
+		    "gain_loss": "N/A", 							
+		    "type": "MF"
+		}
+	    ], 
+	    "taxable": [					
+		{
+		    "taxable": "$870,978", 
+		    "account": "Joint Account"
+		}, 
+		{
+		    "taxable": "228,961", 
+		    "account": "Peet IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Karen IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Outside"
+		}
+	    ]
+	},
+	{
+	    "asset_class": "Fixed-CAMuniInt", 
+	    "percent_of_total": "25.0%", 
+	    "current_percent": "9.0%", 
+	    "target_percent": "8.8%",
+	    "balance": "-",
+	    "symbols": [
+		{
+		    "symbol": "VCAIX", 
+		    "account": "Joint Account", 
+		    "description": "Vanguard California Intermediate Tax-Exempt Investor Shares", 
+		    "shares": "30,310.987", 					
+		    "current_price": "$11.47", 
+		    "value": "$347,667", 						
+		    "gain_loss": "8,134", 							
+		    "type": "MF",
+		    "lots": [
+			{
+			    "term": "ST", 
+			    "buy_date": "08/05/2013", 
+			    "shares": "30,310.987", 					
+			    "lot": "-", 
+			    "gain_loss": "-$235", 
+			    "cost_basis": "$17,806", 
+			    "buy_price": "$11.20"
+			}
+		    ]
+		},
+		{
+		    "symbol": "VCADX", 
+		    "account": "Joint Account", 
+		    "description": "Vanguard California Intermediate Tax-Exempt Admiral Shares", 
+		    "shares": "18,545.378", 					
+		    "current_price": "$11.47", 
+		    "value": "$212,715", 						
+		    "gain_loss": "2,740", 							
+		    "type": "MF",
+		    "lots": [
+			{
+			    "term": "LT", 
+			    "buy_date": "09/27/2011", 
+			    "shares": "18,545.378", 					
+			    "lot": "-", 
+			    "gain_loss": "$4,215", 
+			    "cost_basis": "$208,500", 
+			    "buy_price": "$11.24"
+			}
+		    ]
+		}
+	    ], 
+	    "taxable": [					
+		{
+		    "taxable": "$560,382", 
+		    "account": "Joint Account"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Peet IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Karen IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Outside"
+		}
+	    ]
+	},
+	{
+	    "asset_class": "Fixed-CAMuniInt", 
+	    "percent_of_total": "25.0%", 
+	    "current_percent": "9.0%", 
+	    "target_percent": "8.8%",
+	    "balance": "-",
+	    "symbols": [
+		{
+		    "symbol": "VCAIX", 
+		    "account": "Joint Account", 
+		    "description": "Vanguard California Intermediate Tax-Exempt Investor Shares", 
+		    "shares": "30,310.987", 					
+		    "current_price": "$11.47", 
+		    "value": "$347,667", 						
+		    "gain_loss": "8,134", 							
+		    "type": "MF",
+		    "lots": [
+			{
+			    "term": "ST", 
+			    "buy_date": "08/05/2013", 
+			    "shares": "30,310.987", 					
+			    "lot": "-", 
+			    "gain_loss": "-$235", 
+			    "cost_basis": "$17,806", 
+			    "buy_price": "$11.20"
+			}
+		    ]
+		},
+		{
+		    "symbol": "VCADX", 
+		    "account": "Joint Account", 
+		    "description": "Vanguard California Intermediate Tax-Exempt Admiral Shares", 
+		    "shares": "18,545.378", 					
+		    "current_price": "$11.47", 
+		    "value": "$212,715", 						
+		    "gain_loss": "2,740", 							
+		    "type": "MF",
+		    "lots": [
+			{
+			    "term": "LT", 
+			    "buy_date": "09/27/2011", 
+			    "shares": "18,545.378", 					
+			    "lot": "-", 
+			    "gain_loss": "$4,215", 
+			    "cost_basis": "$208,500", 
+			    "buy_price": "$11.24"
+			}
+		    ]
+		}
+	    ], 
+	    "taxable": [					
+		{
+		    "taxable": "$149,184", 
+		    "account": "Joint Account"
+		}, 
+		{
+		    "taxable": "162,033", 
+		    "account": "Peet IRA"
+		}, 
+		{
+		    "taxable": "15,095", 
+		    "account": "Karen IRA"
+		}, 
+		{
+		    "taxable": "-", 
+		    "account": "Outside"
+		}
+	    ]
+	}
+    ], 
+    "settings": {
+	"security_preferences": [
+	    {
+		"choice_for_nontaxable_accounts": "xxxxx", 
+		"asset_class": "US", 
+		"tax_efficiency_level": 2, 
+		"choice_for_taxable_accounts": "xxxxx", 
+		"subclass": "MarketTilt1", 
+		"proxy_security": "xxxxx"
+	    }, 
+	    {
+		"choice_for_nontaxable_accounts": "xxxxx", 
+		"asset_class": "US", 
+		"tax_efficiency_level": 1, 
+		"choice_for_taxable_accounts": "xxxxx", 
+		"subclass": "SmallValue", 
+		"proxy_security": "xxxxx"
+	    }, 
+	    {
+		"choice_for_nontaxable_accounts": "xxxxx", 
+		"asset_class": "Dev", 
+		"tax_efficiency_level": 4, 
+		"choice_for_taxable_accounts": "xxxxx", 
+		"subclass": "MarketTilt3", 
+		"proxy_security": "xxxxx"
+	    }, 
+	    {
+		"choice_for_nontaxable_accounts": "xxxxx", 
+		"asset_class": "Emerging", 
+		"tax_efficiency_level": 3, 
+		"choice_for_taxable_accounts": "xxxxx", 
+		"subclass": "MarketTilt3", 
+		"proxy_security": "xxxxx"
+	    }
+	], 
+	"accounts": [
+	    {
+		"taxable": true, 
+		"trading": "Allowed", 
+		"account_name": "Sam and Mary Taxable", 
+		"minimum_cash": "$n,nnn,nnn", 
+		"number": "nnnnnnnnn"
+	    }, 
+	    {
+		"taxable": false, 
+		"trading": "Blocked", 
+		"account_name": "Sam IRA", 
+		"minimum_cash": "$n,nnn,nnn", 
+		"number": "nnnnnnnnn"
+	    }, 
+	    {
+		"taxable": true, 
+		"trading": "Allowed", 
+		"account_name": "Mary IRA", 
+		"minimum_cash": "$n,nnn,nnn", 
+		"number": "nnnnnnnnn"
+	    }
+	], 
+	"security_exceptions": [
+	    {
+		"security": "xxxxx", 
+		"trading": "Blocked", 
+		"account": "xxxx-xxxx", 
+		"minimum_cash": "$n,nnn,nnn", 
+		"redemption_hold_days": "nnn"
+	    }
+	], 
+	"allocations": [
+	    {
+		"allocation": "Equity", 
+		"percent": "70%",
+		"classes": [
+		    {
+			"name": "US",
+			"percent": "55%", 
+			"subclasses": [
+			    {
+				"subclass": "LargeCap",
+				"target": "60%"
+			    }, 
+			    {
+				"subclass": "SmallValue",
+				"target": "40%"
+			    }
+			] 
+		    }, 
+		    {
+			"name": "Developed",
+			"percent": "25%"
+		    }, 
+		    {
+			"name": "Emerging",
+			"percent": "xx%"
+		    }, 
+		    {
+			"name": "REIT",
+			"percent": "xx%"
+		    }
+		]
+	    }, 
+	    {
+		"allocation": "Fixed-income", 
+		"percent": "30%",
+		"classes": [
+		    {
+			"name": "US market",
+			"percent": "50%"
+		    }, 
+		    {
+			"name": "Global Intermediate",
+			"percent": "25%"
+		    }, 
+		    {
+			"name": "CA Muni",
+			"percent": "nn%"
+		    }
+		]
+	    }
+	], 
+	"heterogeneous_funds": [
+	    {
+		"symbol": "xxxxx", 
+		"trading": "blocked", 
+		"assets": [
+		    {
+			"percent": "nn%", 
+			"asset_class": "name1"
+		    }, 
+		    {
+			"percent": "nn%", 
+			"asset_class": "name2"
+		    }
+		]
+	    }
+	]
     }, 
-    {
-      "name": "Sam IRA", 
-      "total_value": 1, 
-      "securities": 2, 
-      "available_cash": 3, 
-      "excess_cash": 4,
-      "trading": 5
-    }, 
-    {
-      "name": "Mary IRA", 
-      "securities": 2, 
-      "available_cash": 3, 
-      "trading": 5, 
-      "total_value": 1, 
-      "excess_cash": 4
-    }, 
-    {
-      "name": "Outside", 
-      "securities": 2, 
-      "available_cash": 3, 
-      "trading": 5, 
-      "total_value": 1, 
-      "excess_cash": 4
-    }
-  ], 
-  "assets": [
-    {
-      "asset_class": "Name1", 
-      "percent_of_total": "nnn.n%", 
-      "current_percent": "nnn.n%", 
-      "target_percent": "nnn.n%",
-      "balance": "High", 
-      "symbols": [
-        {
-          "symbol": "symbol1", 
-          "account": "Sam IRA", 
-          "description": "name1", 
-          "shares": "n,nnn,nnn", 
-          "current_price": "$nn.nn", 
-          "value": "$n,nnn,nnn", 
-          "gain_loss": "--", 
-          "type": "--",
-          "lots": [
-            {
-              "term": "LT", 
-              "buy_date": "mm/dd/yyyy", 
-              "shares": "n,nnn,nnn", 
-              "lot": "lot1", 
-              "gain_loss": "-$n,nnn,nnn", 
-              "cost_basis": "$n,nnn,nnn", 
-              "buy_price": "$nn.nn"
-            }, 
-            {
-              "term": "--", 
-              "buy_date": "missing", 
-              "shares": "n,nnn,nnn", 
-              "lot": "lot2", 
-              "gain_loss": "missing", 
-              "cost_basis": "missing", 
-              "buy_price": "missing"
-            }
-          ]
-        }, 
-        {
-          "symbol": "symbol2", 
-          "shares": "n,nnn,nnn", 
-          "current_price": "$nn.nn", 
-          "value": "$n,nnn,nnn", 
-          "gain_loss": "$n,nnn,nnn", 
-          "type": "Legacy",
-          "account": "Sam and Mary taxable", 
-          "description": "name2", 
-          "lots": [
-            {
-              "term": "LT", 
-              "buy_date": "mm/dd/yyyy", 
-              "shares": "n,nnn,nnn", 
-              "lot": "lot1", 
-              "gain_loss": "-$n,nnn,nnn", 
-              "cost_basis": "$n,nnn,nnn", 
-              "buy_price": "$nn.nn"
-            }, 
-            {
-              "term": "--", 
-              "buy_date": "missing", 
-              "shares": "n,nnn,nnn", 
-              "lot": "lot2", 
-              "gain_loss": "missing", 
-              "cost_basis": "missing", 
-              "buy_price": "missing"
-            }
-          ]
-        },
-        {
-          "symbol": "symbol3", 
-          "account": "Sam IRA", 
-          "description": "name1", 
-          "shares": "n,nnn,nnn", 
-          "current_price": "$nn.nn", 
-          "value": "$n,nnn,nnn", 
-          "gain_loss": "--", 
-          "type": "--",
-          "lots": [
-            {
-              "term": "LT", 
-              "buy_date": "mm/dd/yyyy", 
-              "shares": "n,nnn,nnn", 
-              "lot": "lot1", 
-              "gain_loss": "-$n,nnn,nnn", 
-              "cost_basis": "$n,nnn,nnn", 
-              "buy_price": "$nn.nn"
-            }, 
-            {
-              "term": "--", 
-              "buy_date": "missing", 
-              "shares": "n,nnn,nnn", 
-              "lot": "lot2", 
-              "gain_loss": "missing", 
-              "cost_basis": "missing", 
-              "buy_price": "missing"
-            }
-          ]
-        }, 
-        {
-          "symbol": "symbol4", 
-          "shares": "n,nnn,nnn", 
-          "current_price": "$nn.nn", 
-          "value": "$n,nnn,nnn", 
-          "gain_loss": "$n,nnn,nnn", 
-          "type": "Legacy",
-          "account": "Sam and Mary taxable", 
-          "description": "name2", 
-          "lots": [
-            {
-              "term": "LT", 
-              "buy_date": "mm/dd/yyyy", 
-              "shares": "n,nnn,nnn", 
-              "lot": "lot1", 
-              "gain_loss": "-$n,nnn,nnn", 
-              "cost_basis": "$n,nnn,nnn", 
-              "buy_price": "$nn.nn"
-            }, 
-            {
-              "term": "--", 
-              "buy_date": "missing", 
-              "shares": "n,nnn,nnn", 
-              "lot": "lot2", 
-              "gain_loss": "missing", 
-              "cost_basis": "missing", 
-              "buy_price": "missing"
-            }
-          ]
-        }
-      ], 
-      "taxable": [
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Sam and Mary"
-        }, 
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Sam IRA"
-        }, 
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Mary IRA"
-        }, 
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Outside"
-        }
-      ]
-    },
-    {
-      "asset_class": "Name2", 
-      "percent_of_total": "nnn.n%", 
-      "current_percent": "nnn.n%", 
-      "target_percent": "nnn.n%",
-      "balance": "High",
-      "taxable": [
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Sam and Mary"
-        }, 
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Sam IRA"
-        }, 
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Mary IRA"
-        }, 
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Outside"
-        }
-      ]
-    },
-    {
-      "asset_class": "Name3", 
-      "percent_of_total": "nnn.n%", 
-      "current_percent": "nnn.n%", 
-      "target_percent": "nnn.n%",
-      "balance": "High",
-      "taxable": [
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Sam and Mary"
-        }, 
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Sam IRA"
-        }, 
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Mary IRA"
-        }, 
-        {
-          "taxable": "$n,nnn,nnn", 
-          "account": "Outside"
-        }
-      ]
-    }
-  ], 
-  "settings": {
-    "security_preferences": [
-      {
-        "choice_for_nontaxable_accounts": "xxxxx", 
-        "asset_class": "US", 
-        "tax_efficiency_level": 2, 
-        "choice_for_taxable_accounts": "xxxxx", 
-        "subclass": "MarketTilt1", 
-        "proxy_security": "xxxxx"
-      }, 
-      {
-        "choice_for_nontaxable_accounts": "xxxxx", 
-        "asset_class": "US", 
-        "tax_efficiency_level": 1, 
-        "choice_for_taxable_accounts": "xxxxx", 
-        "subclass": "SmallValue", 
-        "proxy_security": "xxxxx"
-      }, 
-      {
-        "choice_for_nontaxable_accounts": "xxxxx", 
-        "asset_class": "Dev", 
-        "tax_efficiency_level": 4, 
-        "choice_for_taxable_accounts": "xxxxx", 
-        "subclass": "MarketTilt3", 
-        "proxy_security": "xxxxx"
-      }, 
-      {
-        "choice_for_nontaxable_accounts": "xxxxx", 
-        "asset_class": "Emerging", 
-        "tax_efficiency_level": 3, 
-        "choice_for_taxable_accounts": "xxxxx", 
-        "subclass": "MarketTilt3", 
-        "proxy_security": "xxxxx"
-      }
-    ], 
-    "accounts": [
-      {
-        "taxable": true, 
-        "trading": "Allowed", 
-        "account_name": "Sam and Mary Taxable", 
-        "minimum_cash": "$n,nnn,nnn", 
-        "number": "nnnnnnnnn"
-      }, 
-      {
-        "taxable": false, 
-        "trading": "Blocked", 
-        "account_name": "Sam IRA", 
-        "minimum_cash": "$n,nnn,nnn", 
-        "number": "nnnnnnnnn"
-      }, 
-      {
-        "taxable": true, 
-        "trading": "Allowed", 
-        "account_name": "Mary IRA", 
-        "minimum_cash": "$n,nnn,nnn", 
-        "number": "nnnnnnnnn"
-      }
-    ], 
-    "security_exceptions": [
-      {
-        "security": "xxxxx", 
-        "trading": "Blocked", 
-        "account": "xxxx-xxxx", 
-        "minimum_cash": "$n,nnn,nnn", 
-        "redemption_hold_days": "nnn"
-      }
-    ], 
-    "allocations": [
-      {
-        "allocation": "Equity", 
-        "percent": "70%",
-        "classes": [
-          {
-            "name": "US",
-            "percent": "55%", 
-            "subclasses": [
-              {
-                "subclass": "LargeCap",
-                "target": "60%"
-              }, 
-              {
-                "subclass": "SmallValue",
-                "target": "40%"
-              }
-            ] 
-          }, 
-          {
-            "name": "Developed",
-            "percent": "25%"
-          }, 
-          {
-            "name": "Emerging",
-            "percent": "xx%"
-          }, 
-          {
-            "name": "REIT",
-            "percent": "xx%"
-          }
-        ]
-      }, 
-      {
-        "allocation": "Fixed-income", 
-        "percent": "30%",
-        "classes": [
-          {
-            "name": "US market",
-            "percent": "50%"
-          }, 
-          {
-            "name": "Global Intermediate",
-            "percent": "25%"
-          }, 
-          {
-            "name": "CA Muni",
-            "percent": "nn%"
-          }
-        ]
-      }
-    ], 
-    "heterogeneous_funds": [
-      {
-        "symbol": "xxxxx", 
-        "trading": "blocked", 
-        "assets": [
-          {
-            "percent": "nn%", 
-            "asset_class": "name1"
-          }, 
-          {
-            "percent": "nn%", 
-            "asset_class": "name2"
-          }
-        ]
-      }
+    "alerts": [
+	{
+	    "alert": "Cost basis is missing on some assets"
+	}, 
+	{
+	    "alert": "Tax loss harvest potential $nn,nnn"
+	}
     ]
-  }, 
-  "alerts": [
-    {
-      "alert": "Cost basis is missing on some assets"
-    }, 
-    {
-      "alert": "Tax loss harvest potential $nn,nnn"
-    }
-  ]
 }
