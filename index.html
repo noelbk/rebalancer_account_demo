@@ -86,7 +86,7 @@
 	<tr>
           <td width="50%">
 	    <h1>Summary</h1>
-	    <table id="summary_table" >
+	    <table id="summary_table" width="100%">
 	      <tbody>
 		<tr><th>Family Name</th><td>${family_name}</td></tr>
 		<tr><th>Holdings As Of</th><td align="right">${holdings_as_of}</td></tr>
@@ -98,7 +98,7 @@
 	    </table>
 
 	    <h2>Account Status</h2>  
-	    <table id="account_status_table" border=0 width="100%">
+	    <table id="account_status_table" width="100%">
 	      <tr>
 		<td>Total Value</td>
 		{%each account_status%}<td align="right">${$value.name}</td>{%/each%}

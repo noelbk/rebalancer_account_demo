@@ -45,13 +45,8 @@
 	text-align: left;
 }
 
-#summary_table {
-	width: 100%;
-}
-
-#summary_table td{
+#summary_table, #account_status_table td{
 	border-left: 4px solid #95cdd6;
-	text-align: left;
 }
 
 #summary_table td:first-child{
@@ -77,7 +72,7 @@
 
 /*assets table tab*/
 
-#summary_table tbody tr:first-child, #account_status_table tbody tr:first-child, #symbols_table thead tr:first-child, #symbols_table thead th, #lots_div thead th, #settings_table thead th{
+#summary_table tbody tr:first-child, #account_status_table tbody tr:first-child, #symbols_table thead tr:first-child, #symbols_table thead th, #lots_div thead th, #settings_table thead th {
 	background-color: #95cdd6;
 	font-weight: normal;
 	padding: 3px 8px;
